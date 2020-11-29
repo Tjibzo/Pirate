@@ -1,0 +1,3 @@
+import testfct
+
+testfct.aff()
