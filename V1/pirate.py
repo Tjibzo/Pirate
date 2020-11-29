@@ -7,7 +7,7 @@ from tkinter import *
 
 
 # ----- PIRATE -----
-def dessine_pirate():
+def dessine_pirate(can):
 
     #oreilles
     can.create_oval(230,160,250,180, width=3,outline='peach puff',fill='peach puff2')
@@ -79,3 +79,4 @@ def dessine_pirate():
     can.create_line(345,75,295,125, width=6,fill='ivory2')
     can.create_oval(325,90,335,110, outline='black',fill='black')
     can.create_oval(315,90,305,110, outline='black',fill='black')
+    

@@ -9,11 +9,6 @@ from pip import *
 import pirate
 
 
-#------PIRATE------
-
-pirate.dessine_pirate()
-
-
 # ----- POISSON -----
 
 choix_poisson=0
@@ -32,7 +27,7 @@ def pecher(event):
     poisson(x,y)
     dx,dy=(x - x_main)/(-100),(y - y_main)/(-100)
     # poisson(x,y)
-    pirate.dessine_pirate()
+    pirate.dessine_pirate(can)
 
 def poisson(x,y):
     if choix_poisson==0:
@@ -49,7 +44,7 @@ def poisson(x,y):
         can.create_oval(19+x,9+y,22+x,13+y, width=2,outline='black',fill='black')
         can.create_arc(11+x,15+y,40+x,36+y, width=2, extent=90, start=180, outline='black')
         balle = can.create_oval(x1,y1,x1+20,y1+10, width=2,fill=couleur)
-        pirate.dessine_pirate()
+        pirate.dessine_pirate(can)
     else:
         can.delete(ALL)
         
@@ -65,7 +60,7 @@ def poisson(x,y):
         can.create_oval(0+x, -50+y, 15+x, -35+y, outline='black', fill='black')
         can.create_line(0+x, 0+y, 15+x, -15+y, width=5)
         balle = can.create_oval(x1,y1,x1+20,y1+10, width=2,fill=couleur)
-        pirate.dessine_pirate()
+        pirate.dessine_pirate(can)
 
 def remonter():
     global nb_poissons,choix_poisson
@@ -88,7 +83,7 @@ def depl():
         print('del - depl')
         
         balle = can.create_oval(x1,y1,x1+20,y1+10, width=2,fill=couleur)
-        pirate.dessine_pirate()
+        pirate.dessine_pirate(can)
 
 
 # ----- PISTOLET -----
@@ -156,7 +151,6 @@ can.grid()
 balle=can.create_oval(x1,y1,x1+20,y1+10, width=2,fill=couleur)
 bou2 = Button(fen, text='Tirer', width = 8, command=tirer)
 bou2.grid()
-pirate.dessine_pirate()
 B1=Button(fen, text='Quitter', command=fen.destroy)
 B1.grid()
 etiquette=Label(fen, text='nb_poissons')
@@ -165,4 +159,12 @@ ferrer=Button(fen, text='vérouillé', command=remonter)
 ferrer.grid()
 chaine = Label(fen,text='0')
 chaine.grid()
+
+
+#------PIRATE------
+
+pirate.dessine_pirate(can)
+
+
+
 fen.mainloop()
