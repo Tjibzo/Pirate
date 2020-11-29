@@ -142,8 +142,9 @@ def poisson(x,y):
 def remonter():
     global nb_poissons,choix_poisson
     if ferrer.cget('text')=='férrer':
-        chaine.config(text=nb_poissons+1)
         nb_poissons+=1
+        texte_poisson='nomobre de poissons : '+str(nb_poissons)
+        etiquette.config(text=texte_poisson)
         depl()
     ferrer.config(text='vérouillé')
 
@@ -224,17 +225,17 @@ fen.title("Pirate")
 can=Canvas(fen,width = 640, height = 640, bg = 'light blue')
 can.bind('<Button-1>', pecher)
 #un clic de souris sur le canevas va déclencher l'appel à cette fonction
-can.grid()
+can.grid(row = 2, column = 1)
 balle=can.create_oval(x1,y1,x1+20,y1+10, width=2,fill=couleur)
 bou2 = Button(fen, text='Tirer', width = 8, command=tirer)
-bou2.grid()
+bou2.grid(row = 1, column = 0)
 dessine_pirate()
 B1=Button(fen, text='Quitter', command=fen.destroy)
-B1.grid()
+B1.grid(row = 3, column = 3)
 etiquette=Label(fen, text='nb_poissons')
-etiquette.grid()
+etiquette.grid(row = 1, column = 1)
 ferrer=Button(fen, text='vérouillé', command=remonter)
-ferrer.grid()
-chaine = Label(fen,text='0')
-chaine.grid()
+ferrer.grid(row = 1, column = 3)
+B_reset=Button(fen, text='reset', command=reset)
+B_reset.grid(row = 3, column = 0)
 fen.mainloop()

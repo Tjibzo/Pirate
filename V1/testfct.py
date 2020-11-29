@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 def aff():
+=======
+def aff():
+>>>>>>> 2b14c9baee59e02b85374c1a8de90a993a5dadaa
     print("IT FUCKING WORKS")

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 
 
@@ -79,4 +80,3 @@ def dessine_pirate(can):
     can.create_line(345,75,295,125, width=6,fill='ivory2')
     can.create_oval(325,90,335,110, outline='black',fill='black')
     can.create_oval(315,90,305,110, outline='black',fill='black')
-    
